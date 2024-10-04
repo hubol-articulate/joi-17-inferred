@@ -13,6 +13,6 @@ const joiSchema = Joi.object({
 const test = async () => {
   const obj = await joiSchema.validateAsync("asdf");
   const str: string = obj.nested.key1;
-
+  // @ts-expect-error Need to check for undefined
   obj.email.length === 0;
 };
